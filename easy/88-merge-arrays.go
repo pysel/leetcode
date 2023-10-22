@@ -1,4 +1,4 @@
-package easy
+package main
 
 import "fmt"
 
@@ -39,6 +39,7 @@ func merge_mine(nums1 []int, m int, nums2 []int, n int) {
 	fmt.Println(nums1)
 }
 
+// Idea: start from the end of both arrays and append to first one sice it is expanded
 func merge_best(nums1 []int, m int, nums2 []int, n int) {
 	for n != 0 {
 		if m != 0 && nums1[m-1] > nums2[n-1] {

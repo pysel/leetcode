@@ -1,6 +1,7 @@
-package easy
+package main
 
 // 100% 13%
+// Idea: start from the end, change places of val with latest values in array
 func removeElement_mine(nums []int, val int) int {
 	nlen := len(nums)
 
