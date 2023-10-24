@@ -1,16 +1,25 @@
 package main
 
-// func removeDuplicates(nums []int) int {
-// 	var k int
-// 	for i := 0; i < len(nums)-2; i++ {
-// 		first, second, third := nums[i], nums[i+1], nums[i+2]
-// 		if first == second && first == third {
-// 			// move last element of the triplet to the end of array
-// 			nums = append(nums[:i+2], append(nums[i+3:], nums[i+2])...)
-// 			k++
-// 			i--
-// 		}
-// 	}
+// Idea: two pointer approach
+// i (fast pointer) iterates over array, j (slow pointer) shows where to place the next eligible element
+func removeDuplicates(nums []int) int {
+	if len(nums) < 2 {
+		return len(nums)
+	}
 
-// 	return k
-// }
+	var j int = 2
+
+	for i := 2; i < len(nums); i++ {
+		current := nums[i]
+		if current == nums[j-2] {
+			// third occurence
+			continue
+		} else if current != nums[j-2] {
+			// first or second occurence
+			nums[j] = current
+			j++
+		}
+	}
+
+	return j
+}
