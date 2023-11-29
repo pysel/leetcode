@@ -1,6 +1,6 @@
 package main
 
-// Runtime: 93.30% , Memory: 29.16%
+// Runtime: 93.30%; Memory: 29.16%
 func trap(height []int) int {
 	maxInds := maxInds(height)
 	if height[maxInds[0]] == 0 {
